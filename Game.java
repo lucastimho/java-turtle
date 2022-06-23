@@ -3,11 +3,18 @@ import java.awt.Toolkit;
 
 public class Game extends JFrame
 {
+	Model model;
+	View view;
+	Controller controller;
+
 	public Game()
 	{
-		Controller controller = new Controller();
-		View view = new View(controller);
-		this.setTitle("The most awesomest program ever!");
+		model = new Model();
+		controller = new Controller(model);
+		view = new View(controller, model);
+		this.addMouseListener(controller);
+		this.addKeyListener(controller);
+		this.setTitle("Turtle Attack!!!");
 		this.setSize(500, 500);
 		this.setFocusable(true);
 		this.getContentPane().add(view);
@@ -15,8 +22,29 @@ public class Game extends JFrame
 		this.setVisible(true);
 	}
 
+	public void run()
+	{
+		while(true)
+		{
+			controller.update();
+			model.update();
+			view.repaint(); // Indirectly calls View.paintComponent
+			Toolkit.getDefaultToolkit().sync(); // Updates screen
+
+			// Go to sleep for 30 miliseconds
+			try
+			{
+				Thread.sleep(30);
+			} catch(Exception e) {
+				e.printStackTrace();
+				System.exit(1);
+			}
+		}
+	}
+
 	public static void main(String[] args)
 	{
 		Game g = new Game();
+		g.run();
 	}
 }
