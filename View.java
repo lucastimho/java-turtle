@@ -15,5 +15,11 @@ class View extends JPanel
 		b1 = new JButton("Never push me");
 		b1.addActionListener(c);
 		this.add(b1);
+		c.setView(this);
+	}
+	void removeButton()
+	{
+		this.remove(b1);
+		this.repaint();
 	}
 }

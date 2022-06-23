@@ -5,13 +5,18 @@ import java.awt.event.ActionEvent;
 
 class Controller implements ActionListener
 {
+	View view;
+
 	Controller()
 	{
-		View view;
+	}
+	void setView(View v)
+	{
+		view = v;
 	}
 
 	public void actionPerformed(ActionEvent e)
 	{
-		System.out.println("Hey! I said never push that button!");
+		view.removeButton();
 	}
 }
