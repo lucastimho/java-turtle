@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 
-class Controller implements ActionListener, MouseListener
+class Controller implements MouseListener, KeyListener
 {
 	Model model;
 	boolean keyLeft;
@@ -27,7 +27,7 @@ class Controller implements ActionListener, MouseListener
 	public void mouseEntered(MouseEvent e) {    }
 	public void mouseExited(MouseEvent e) {    }
 	public void mouseClicked(MouseEvent e) {    }
-	
+
 	public void keyPressed(KeyEvent e)
 	{
 		switch(e.getKeyCode())
@@ -56,9 +56,9 @@ class Controller implements ActionListener, MouseListener
 
 	void update()
 	{
-		if(keyRight) model.dest_x++;
-		if(keyLeft) model.dest_x--;
-		if(keyDown) model.dest_y++;
-		if(keyUp) model.dest_y--;
+		if(keyRight) model.dest_x += 4;
+		if(keyLeft) model.dest_x -= 4;
+		if(keyDown) model.dest_y += 4;
+		if(keyUp) model.dest_y -= 4;
 	}
 }
