@@ -26,22 +26,23 @@ class Controller implements MouseListener, KeyListener
 
 	public void mousePressed(MouseEvent e)
 	{
-		model.addNewTube(e.getX(), e.getY());
-		// Tube theTubeIClickedOn = null;
-        //     boolean didIClickOnAnyTube = false;
-        //     for(int i = 0; i < tubes.size(); i++)
-        //     {
-        //         Tube t = tubes.get(i);
-        //         if(t.didIClickOnYou(x, y))
-        //         {
-        //             theTubeIClickedOn = t;
-                    
-        //         }
-        //     }
-        //     if(theTubeIClickedOn == null)
-        //       addNewTube();
-        //     else
-        //       removeTube(didIClickOnAnyTube);
+		Tube theTubeIClickedOn = null;
+		int index = 0;
+		// boolean didIClickOnAnyTube = false;
+		for(int i = 0; i < model.tubes.size(); i++)
+		{
+			Tube t = model.tubes.get(i);
+			if(t.isThatClickInMe(e.getX(), e.getY()))
+			{
+				theTubeIClickedOn = t;
+				index = i;
+				
+			}
+		}
+		if(theTubeIClickedOn == null)
+			model.addNewTube(e.getX(), e.getY());
+		else
+			model.removeTube(index);
 	}
 
 	public void mouseReleased(MouseEvent e) {    }

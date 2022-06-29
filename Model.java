@@ -36,6 +36,10 @@ class Model {
             Tube t = new Tube(mouse_x, mouse_y);
             tubes.add(t);
         }
+        public void removeTube(int index)
+        {
+            tubes.remove(index);
+        }
     
 }
 class Tube {
@@ -56,5 +60,12 @@ class Tube {
         if(mouse_x > x + width)
           return false;
         return true;
+    }
+    boolean didIClickOnYou(int mouse_x, int mouse_y, Tube t)
+    {
+      if (mouse_x == t.x && mouse_y == t.y)
+            return true;
+      else
+            return false;
     }
 }
