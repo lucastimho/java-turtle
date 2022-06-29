@@ -28,7 +28,6 @@ class Controller implements MouseListener, KeyListener
 	{
 		Tube theTubeIClickedOn = null;
 		int index = 0;
-		// boolean didIClickOnAnyTube = false;
 		for(int i = 0; i < model.tubes.size(); i++)
 		{
 			Tube t = model.tubes.get(i);
