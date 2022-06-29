@@ -11,8 +11,6 @@ class Model {
         Model()
         {
             tubes = new ArrayList<>();
-            Tube t = new Tube(400, 300);
-            tubes.add(t);
         }
     
         public void update()
