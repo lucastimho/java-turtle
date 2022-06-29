@@ -26,8 +26,22 @@ class Controller implements MouseListener, KeyListener
 
 	public void mousePressed(MouseEvent e)
 	{
-		// model.setDestination(e.getX(), e.getY());
-		// model.mousePressed(e.getX(), e.getY());
+		model.addNewTube(e.getX(), e.getY());
+		// Tube theTubeIClickedOn = null;
+        //     boolean didIClickOnAnyTube = false;
+        //     for(int i = 0; i < tubes.size(); i++)
+        //     {
+        //         Tube t = tubes.get(i);
+        //         if(t.didIClickOnYou(x, y))
+        //         {
+        //             theTubeIClickedOn = t;
+                    
+        //         }
+        //     }
+        //     if(theTubeIClickedOn == null)
+        //       addNewTube();
+        //     else
+        //       removeTube(didIClickOnAnyTube);
 	}
 
 	public void mouseReleased(MouseEvent e) {    }
@@ -37,24 +51,24 @@ class Controller implements MouseListener, KeyListener
 
 	public void keyPressed(KeyEvent e)
 	{
-		switch(e.getKeyCode())
-		{
-			case KeyEvent.VK_RIGHT: keyRight = true; break;
-			case KeyEvent.VK_LEFT: keyLeft = true; break;
-			case KeyEvent.VK_UP: keyUp = true; break;
-			case KeyEvent.VK_DOWN: keyDown = true; break;
-		}
+		// switch(e.getKeyCode())
+		// {
+		// 	case KeyEvent.VK_RIGHT: keyRight = true; break;
+		// 	case KeyEvent.VK_LEFT: keyLeft = true; break;
+		// 	case KeyEvent.VK_UP: keyUp = true; break;
+		// 	case KeyEvent.VK_DOWN: keyDown = true; break;
+		// }
 	}
 
 	public void keyReleased(KeyEvent e)
 	{
-		switch(e.getKeyCode())
-		{
-			case KeyEvent.VK_RIGHT: keyRight = false; break;
-			case KeyEvent.VK_LEFT: keyLeft = false; break;
-			case KeyEvent.VK_UP: keyUp = false; break;
-			case KeyEvent.VK_DOWN: keyDown = false; break;
-		}
+		// switch(e.getKeyCode())
+		// {
+		// 	case KeyEvent.VK_RIGHT: keyRight = false; break;
+		// 	case KeyEvent.VK_LEFT: keyLeft = false; break;
+		// 	case KeyEvent.VK_UP: keyUp = false; break;
+		// 	case KeyEvent.VK_DOWN: keyDown = false; break;
+		// }
 	}
 
 	public void keyTyped(KeyEvent e)

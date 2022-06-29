@@ -11,7 +11,7 @@ class Model {
         Model()
         {
             tubes = new ArrayList<>();
-            Tube t = new Tube();
+            Tube t = new Tube(400, 300);
             tubes.add(t);
         }
     
@@ -33,24 +33,11 @@ class Model {
             this.dest_x = x;
             this.dest_y = y;
         }
-        // void mousePressed(int x, int y) 
-        // {
-        //     Tube theTubeIClickedOn = null;
-        //     boolean didIClickOnAnyTube = false;
-        //     for(int i = 0; i < tubes.size(); i++)
-        //     {
-        //         Tube t = tubes.get(i);
-        //         if(t.didIClickOnYou(x, y))
-        //         {
-        //             theTubeIClickedOn = t;
-                    
-        //         }
-        //     }
-        //     if(theTubeIClickedOn == null)
-        //       addNewTube();
-        //     else
-        //       removeTube(didIClickOnAnyTube);
-        // }
+        public void addNewTube(int mouse_x, int mouse_y)
+        {
+            Tube t = new Tube(mouse_x, mouse_y);
+            tubes.add(t);
+        }
     
 }
 class Tube {
@@ -59,10 +46,10 @@ class Tube {
     int width = 55;
     int height;
 
-    Tube()
+    Tube(int a, int b)
     {
-      x = 400;
-      y = 300;
+      x = a;
+      y = b;
     }
     boolean isThatClickInMe(int mouse_x, int mouse_y)
     {
