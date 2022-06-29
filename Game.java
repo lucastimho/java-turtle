@@ -12,6 +12,7 @@ public class Game extends JFrame
 		model = new Model();
 		controller = new Controller(model);
 		view = new View(controller, model);
+		controller.setView(view);
 		view.addMouseListener(controller);
 		this.addKeyListener(controller);
 		this.setTitle("Turtle Attack!!!");

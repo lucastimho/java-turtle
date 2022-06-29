@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+
 class Model {
     
+        ArrayList<Tube> tubes;
         int turtle_x;
         int turtle_y;
         int dest_x;
@@ -7,6 +10,9 @@ class Model {
     
         Model()
         {
+            tubes = new ArrayList<>();
+            Tube t = new Tube();
+            tubes.add(t);
         }
     
         public void update()
@@ -27,5 +33,43 @@ class Model {
             this.dest_x = x;
             this.dest_y = y;
         }
+        // void mousePressed(int x, int y) 
+        // {
+        //     Tube theTubeIClickedOn = null;
+        //     boolean didIClickOnAnyTube = false;
+        //     for(int i = 0; i < tubes.size(); i++)
+        //     {
+        //         Tube t = tubes.get(i);
+        //         if(t.didIClickOnYou(x, y))
+        //         {
+        //             theTubeIClickedOn = t;
+                    
+        //         }
+        //     }
+        //     if(theTubeIClickedOn == null)
+        //       addNewTube();
+        //     else
+        //       removeTube(didIClickOnAnyTube);
+        // }
     
+}
+class Tube {
+    int x;
+    int y;
+    int width = 55;
+    int height;
+
+    Tube()
+    {
+      x = 400;
+      y = 300;
+    }
+    boolean isThatClickInMe(int mouse_x, int mouse_y)
+    {
+        if(mouse_x < x)
+          return false;
+        if(mouse_x > x + width)
+          return false;
+        return true;
+    }
 }

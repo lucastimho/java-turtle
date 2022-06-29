@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 class Controller implements MouseListener, KeyListener
 {
 	Model model;
+	View view;
 	boolean keyLeft;
 	boolean keyRight;
 	boolean keyUp;
@@ -18,9 +19,15 @@ class Controller implements MouseListener, KeyListener
 		model = m;
 	}
 
+	void setView(View v)
+	{
+		view = v;
+	}
+
 	public void mousePressed(MouseEvent e)
 	{
-		model.setDestination(e.getX(), e.getY());
+		// model.setDestination(e.getX(), e.getY());
+		// model.mousePressed(e.getX(), e.getY());
 	}
 
 	public void mouseReleased(MouseEvent e) {    }
