@@ -16,7 +16,7 @@ public class Game extends JFrame
 		view.addMouseListener(controller);
 		this.addKeyListener(controller);
 		this.setTitle("Turtle Attack!!!");
-		this.setSize(500, 500);
+		this.setSize(900, 900);
 		this.setFocusable(true);
 		this.getContentPane().add(view);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
