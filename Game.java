@@ -52,6 +52,9 @@ public class Game extends JFrame
 	static void testthemodelmarshaler()
 	{
 		Model m = new Model();
+		m.tubes.add(new Tube(31, 17));
+		m.tubes.add(new Tube(1, 2));
+		m.tubes.add(new Tube(100, 200));
 		Json j = m.marshal();
 		j.save("testmodel.json");
 	}
