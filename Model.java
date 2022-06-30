@@ -46,12 +46,19 @@ class Tube {
     int x;
     int y;
     int width = 55;
-    int height;
+    int height = 400;
 
     Tube(int a, int b)
     {
       x = a;
       y = b;
+    }
+    Json marshal()
+    {
+        Json ob = Json.newObject();
+        ob.add("x", x);
+        ob.add("y", y);
+        return ob;
     }
     boolean isThatClickInMe(int mouse_x, int mouse_y)
     {

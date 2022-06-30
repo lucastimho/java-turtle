@@ -43,8 +43,17 @@ public class Game extends JFrame
 		}
 	}
 
+	static void testmytubemarshallerer()
+	{
+		Tube t = new Tube(23, 77);
+		Json j = t.marshal();
+		j.save("testtube.json");
+	}
+
 	public static void main(String[] args)
 	{
+		testmytubemarshallerer();
+		
 		Game g = new Game();
 		g.run();
 	}
