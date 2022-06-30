@@ -12,7 +12,8 @@ class Model {
         {
             tubes = new ArrayList<>();
         }
-    
+        Model (Json obj)
+        {}
         public void update()
         {
             // Move the turtle
@@ -49,6 +50,13 @@ class Model {
                 jsonTubes.add(tubes.get(i).marshal());
             return ob;
         }
+        void unmarshal(Json ob)
+        {
+            tubes = new ArrayList<Tube>();
+            Json jsonList = ob.get("tubes");
+            for(int i = 0; i < jsonList.size(); i++)
+                tubes.add(new Tube(jsonList.get(i)));
+        }
     
 }
 class Tube {
@@ -61,6 +69,11 @@ class Tube {
     {
       x = a;
       y = b;
+    }
+    Tube (Json ob)
+    {
+        x = (int)ob.getLong("x");
+        y = (int)ob.getLong("y");
     }
     boolean isThatClickInMe(int mouse_x, int mouse_y)
     {
