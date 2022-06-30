@@ -62,7 +62,7 @@ public class Game extends JFrame
 	public static void main(String[] args)
 	{
 		// testmytubemarshallerer();
-		testthemodelmarshaler();
+		// testthemodelmarshaler();
 		
 		Game g = new Game();
 		g.run();

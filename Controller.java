@@ -60,7 +60,8 @@ class Controller implements MouseListener, KeyListener
 		}
 		char c = e.getKeyChar();
 		if(c == 's')
-		  System.out.println("Success");
+		  model.marshal().save("model.json");
+		  System.out.println("Saved");
 	}
 
 	public void keyReleased(KeyEvent e)
