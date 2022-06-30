@@ -40,6 +40,15 @@ class Model {
         {
             tubes.remove(index);
         }
+        Json marshal()
+        {
+            Json ob = Json.newObject();
+            Json jsonTubes = Json.newList();
+            ob.add("tubes", jsonTubes);
+            for(int i = 0; i < tubes.size(); i++)
+                jsonTubes.add(tubes.get(i).marshal());
+            return ob;
+        }
     
 }
 class Tube {
@@ -52,13 +61,6 @@ class Tube {
     {
       x = a;
       y = b;
-    }
-    Json marshal()
-    {
-        Json ob = Json.newObject();
-        ob.add("x", x);
-        ob.add("y", y);
-        return ob;
     }
     boolean isThatClickInMe(int mouse_x, int mouse_y)
     {
@@ -74,5 +76,12 @@ class Tube {
             return true;
       else
             return false;
+    }
+    Json marshal()
+    {
+        Json ob = Json.newObject();
+        ob.add("x", x);
+        ob.add("y", y);
+        return ob;
     }
 }

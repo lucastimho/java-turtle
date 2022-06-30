@@ -49,10 +49,17 @@ public class Game extends JFrame
 		Json j = t.marshal();
 		j.save("testtube.json");
 	}
+	static void testthemodelmarshaler()
+	{
+		Model m = new Model();
+		Json j = m.marshal();
+		j.save("testmodel.json");
+	}
 
 	public static void main(String[] args)
 	{
-		testmytubemarshallerer();
+		// testmytubemarshallerer();
+		testthemodelmarshaler();
 		
 		Game g = new Game();
 		g.run();
